@@ -44,44 +44,54 @@ export const skills = [
 
 export const projects = [
   {
-    id: "iot-monitoring-backend",
-    number: "001",
-    title: "IoT Monitoring Backend",
-    description:
-      "Built and deployed a backend service for IoT device monitoring using FastAPI and PostgreSQL. Containerized with Docker and deployed on AWS, complete with CI/CD via GitHub Actions, HTTPS, API authentication, CloudWatch monitoring, and a custom subdomain.",
-    tags: ["FastAPI", "PostgreSQL", "Docker", "AWS", "GitHub Actions"],
-    demoUrl: "https://github.com/vedang012/iot-monitoring-backend",
-    repoUrl: "https://github.com/vedang012/iot-monitoring-backend",
-  },
-  {
     id: "pharmaguard",
-    number: "002",
-    title: "PharmaGuard",
+    number: "001",
+    title: "PharmaGuard — Pharmacogenomic Analysis Platform",
     description:
-      "Built the Spring Boot backend for an AI-driven pharmacogenomics platform that predicts drug-gene interactions from VCF files with confidence-scored risk assessments and explainable clinical guidance. Containerized with Docker and deployed on Render.",
-    tags: ["Java", "Spring Boot", "Docker", "Render"],
+      "Built a full-stack system that processes VCF files to detect genetic variants, assess drug-gene interaction risk, and provide confidence-scored AI-assisted explanations for clinical decision support.",
+    tags: ["Java 21", "Spring Boot", "React", "Gemini API", "Docker"],
     demoUrl: "https://github.com/vedang012/pharmaguard",
     repoUrl: "https://github.com/vedang012/pharmaguard",
   },
   {
-    id: "movie-streaming-deployment",
-    number: "003",
-    title: "Movie Streaming Deployment",
+    id: "geospatial-environmental-analytics",
+    number: "002",
+    title: "Geospatial Environmental Analytics",
     description:
-      "Deployed a Java web application on AWS EC2 using Apache Tomcat, configured server and network settings, and automated the build-and-deploy workflow with Jenkins and Maven.",
-    tags: ["Java", "AWS EC2", "Apache Tomcat", "Jenkins", "Maven"],
-    demoUrl: "https://github.com/vedang012/movie-streaming-deployment",
-    repoUrl: "https://github.com/vedang012/movie-streaming-deployment",
+      "Developed a geospatial platform with JWT-protected project/site management, interactive map-based site selection, and indexed PostGIS aggregation of large-scale emissions data deployed on AWS EC2.",
+    tags: ["Python", "FastAPI", "React", "Mapbox GL JS", "PostGIS", "AWS"],
+    demoUrl: "https://github.com/vedang012/geospatial-environmental-analytics",
+    repoUrl: "https://github.com/vedang012/geospatial-environmental-analytics",
   },
   {
-    id: "food-delivery-deployment",
-    number: "004",
-    title: "Food Delivery Deployment",
+    id: "querydesk",
+    number: "003",
+    title: "QueryDesk — AI-Powered Natural Language SQL Engine",
     description:
-      "Containerized a Node.js food delivery application using Docker and deployed the containerized app on AWS EC2, configuring the instance environment for the runtime.",
-    tags: ["Node.js", "Docker", "AWS EC2"],
-    demoUrl: "https://github.com/vedang012/food-delivery-deployment",
-    repoUrl: "https://github.com/vedang012/food-delivery-deployment",
+      "Built a conversational SQL assistant that translates natural language to validated read-only SQL with vector-aware schema retrieval, guarded execution constraints, and automatic repair for failed queries.",
+    tags: ["React", "FastAPI", "Groq", "Qdrant", "SQLGlot"],
+    demoUrl: "https://github.com/vedang012/querydesk",
+    repoUrl: "https://github.com/vedang012/querydesk",
+  },
+  {
+    id: "enterprise-knowledge-assistant",
+    number: "004",
+    title: "Enterprise Knowledge Assistant — RAG Employee Query System",
+    description:
+      "Implemented a RAG assistant that chunks internal documents, indexes embeddings in Qdrant, and uses cross-modal retrieval plus Groq LLM generation to answer employee queries with grounded responses.",
+    tags: ["Python", "Qdrant", "Groq API", "LangChain"],
+    demoUrl: "https://github.com/vedang012/enterprise-knowledge-assistant",
+    repoUrl: "https://github.com/vedang012/enterprise-knowledge-assistant",
+  },
+  {
+    id: "leetcode-statistics-api",
+    number: "005",
+    title: "LeetCode Statistics API — REST & GraphQL Integration",
+    description:
+      "Built an unofficial Spring Boot API exposing LeetCode user stats through REST and GraphQL, including profile data, submission calendars, problem metadata, and contest performance.",
+    tags: ["Java", "Spring Boot", "GraphQL", "REST APIs"],
+    demoUrl: "https://github.com/vedang012/leetcode-statistics-api",
+    repoUrl: "https://github.com/vedang012/leetcode-statistics-api",
   },
 ];
 
