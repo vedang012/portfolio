@@ -44,21 +44,21 @@ export const skills = [
 
 export const projects = [
   {
-    id: "pharmaguard",
+    id: "course-platform-api",
     number: "001",
-    title: "PharmaGuard — Pharmacogenomic Analysis Platform",
+    title: "Course Platform API",
     description:
-      "Built a full-stack system that processes VCF files to detect genetic variants, assess drug-gene interaction risk, and provide confidence-scored AI-assisted explanations for clinical decision support.",
-    tags: ["Java 21", "Spring Boot", "React", "Gemini API", "Docker"],
-    demoUrl: "https://github.com/vedang012/pharmaguard",
-    repoUrl: "https://github.com/vedang012/pharmaguard",
+      "Spring Boot REST API for structured courses, topics and subtopics on PostgreSQL with JPA/Hibernate. JWT registration and login, course enrollment, subtopic completion tracking, course search, Swagger/OpenAPI docs, and automatic first-startup seeding from JSON.",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "JPA/Hibernate", "JWT", "Swagger"],
+    demoUrl: "https://github.com/vedang012/course-platform-api",
+    repoUrl: "https://github.com/vedang012/course-platform-api",
   },
   {
     id: "geospatial-environmental-analytics",
     number: "002",
     title: "Geospatial Environmental Analytics",
     description:
-      "Developed a geospatial platform with JWT-protected project/site management, interactive map-based site selection, and indexed PostGIS aggregation of large-scale emissions data deployed on AWS EC2.",
+      "Full-stack geospatial app with JWT-secured project and site management, GeoJSON polygons and interactive Mapbox maps. Imported 105,600 emissions-grid records into PostGIS with indexed spatial queries for site-level CO₂ aggregation. Dockerized on AWS EC2 with RDS and GitHub Actions CI/CD.",
     tags: ["Python", "FastAPI", "React", "Mapbox GL JS", "PostGIS", "AWS"],
     demoUrl: "https://github.com/vedang012/geospatial-environmental-analytics",
     repoUrl: "https://github.com/vedang012/geospatial-environmental-analytics",
@@ -68,30 +68,20 @@ export const projects = [
     number: "003",
     title: "QueryDesk — AI-Powered Natural Language SQL Engine",
     description:
-      "Built a conversational SQL assistant that translates natural language to validated read-only SQL with vector-aware schema retrieval, guarded execution constraints, and automatic repair for failed queries.",
-    tags: ["React", "FastAPI", "Groq", "Qdrant", "SQLGlot"],
+      "Natural language SQL assistant to query PostgreSQL and MySQL conversationally. Schema retrieval with FastEmbed and Qdrant vector search, SQLGlot validation, read-only transactions, timeouts and automatic SQL repair, plus JWT cookie auth, encrypted credentials and multi-turn clarification.",
+    tags: ["React", "FastAPI", "Groq", "Qdrant", "SQLGlot", "RAG"],
     demoUrl: "https://github.com/vedang012/querydesk",
     repoUrl: "https://github.com/vedang012/querydesk",
   },
   {
-    id: "enterprise-knowledge-assistant",
+    id: "leetcode-stats-api",
     number: "004",
-    title: "Enterprise Knowledge Assistant — RAG Employee Query System",
+    title: "LeetCode Statistics API",
     description:
-      "Implemented a RAG assistant that chunks internal documents, indexes embeddings in Qdrant, and uses cross-modal retrieval plus Groq LLM generation to answer employee queries with grounded responses.",
-    tags: ["Python", "Qdrant", "Groq API", "LangChain"],
-    demoUrl: "https://github.com/vedang012/enterprise-knowledge-assistant",
-    repoUrl: "https://github.com/vedang012/enterprise-knowledge-assistant",
-  },
-  {
-    id: "leetcode-statistics-api",
-    number: "005",
-    title: "LeetCode Statistics API — REST & GraphQL Integration",
-    description:
-      "Built an unofficial Spring Boot API exposing LeetCode user stats through REST and GraphQL, including profile data, submission calendars, problem metadata, and contest performance.",
+      "Unofficial Spring Boot REST API that retrieves LeetCode user statistics via its GraphQL endpoint. Nine endpoints for profiles, submission calendars, recent submissions, topic tags and contest performance, built with controller, service and client layers.",
     tags: ["Java", "Spring Boot", "GraphQL", "REST APIs"],
-    demoUrl: "https://github.com/vedang012/leetcode-statistics-api",
-    repoUrl: "https://github.com/vedang012/leetcode-statistics-api",
+    demoUrl: "https://github.com/vedang012/leetcode-stats-api",
+    repoUrl: "https://github.com/vedang012/leetcode-stats-api",
   },
 ];
 
