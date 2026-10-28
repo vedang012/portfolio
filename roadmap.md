@@ -7,3 +7,5 @@
 - [x] Make hero section fill viewport so only it shows initially
 - [x] Add custom developer cursor (dot + ring + contextual hover labels)
 - [x] Markdown-file-driven blog: /blog list + /blog/<slug> article pages, nav link
+- [x] Remove blog pages, articles, and navigation link
+- [x] Push the updated portfolio to vedang012/portfolio

@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "./data";
@@ -85,14 +84,6 @@ export function Navigation() {
               </li>
             );
           })}
-          <li>
-            <Link
-              to="/blog"
-              className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Blog
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
