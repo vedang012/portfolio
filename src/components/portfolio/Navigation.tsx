@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "./data";
+import { Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export function Navigation() {
+export function Navigation({ night, onToggleNight }: { night: boolean; onToggleNight: () => void }) {
   const [activeSection, setActiveSection] = useState<string>("hero");
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -48,7 +50,7 @@ export function Navigation() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4 md:px-12 lg:px-16">
+      <nav className="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-3 md:px-12 lg:px-16">
         <a
           href="#hero"
           onClick={(e) => {
@@ -59,7 +61,7 @@ export function Navigation() {
         >
           &lt;/&gt;
         </a>
-        <ul className="flex gap-6">
+        <ul className="order-3 flex w-full justify-between gap-2 sm:order-none sm:w-auto sm:gap-6">
           {navLinks.map(({ label, href }) => {
             const sectionId = href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -85,6 +87,11 @@ export function Navigation() {
             );
           })}
         </ul>
+        <Button variant="ghost" size="icon" onClick={onToggleNight}
+          aria-label={night ? "Switch to light mode" : "Switch to night mode"}
+          aria-pressed={night} title={night ? "Light mode" : "Diwali night mode"}>
+          {night ? <Sun className="size-4" /> : <Moon className="size-4" />}
+        </Button>
       </nav>
     </header>
   );

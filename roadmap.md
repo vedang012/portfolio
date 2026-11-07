@@ -1,5 +1,12 @@
 # Task Roadmap
 
+## Diwali night mode
+- [x] Add a dark-mode toggle with moonlit sky and stars
+- [x] Add realistic interactive fireworks and Happy Diwali greeting
+- [x] Replace the skyshot picture with an anaar and move the greeting into the sky
+- [x] Integrate approved illustrated sky and enlarge greeting with festive pop-up animation
+- [x] Verify desktop, mobile, theme switching, and reduced-motion behavior
+
 ## Done
 - [x] Add floating vAi chat widget to portfolio (interface only, no backend API)
 - [x] Remove Lovable favicon

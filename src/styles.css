@@ -105,18 +105,18 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
+  --background: oklch(0.13 0.004 260);
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
+  --card: oklch(0.19 0.006 260 / 86%);
   --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
+  --popover: oklch(0.19 0.006 260);
   --popover-foreground: oklch(0.984 0.003 247.858);
   --primary: oklch(0.929 0.013 255.508);
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
+  --muted-foreground: oklch(0.79 0.008 260);
   --accent: oklch(0.279 0.041 260.031);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
@@ -139,7 +139,34 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
   --accent-tech: oklch(0.65 0.14 195);
   --accent-tech-foreground: oklch(0.129 0.042 264.695);
+  --diwali-gold: oklch(0.87 0.12 85);
+  --diwali-glow: oklch(0.78 0.14 75 / 30%);
+  --diwali-letter-shadow: oklch(0.52 0.12 55);
 }
+
+.night-portfolio { isolation: isolate; }
+.night-portfolio main, .night-portfolio footer { position: relative; z-index: 1; }
+.diwali-sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: var(--background); }
+.diwali-sky-image { width: 100%; height: 100%; object-fit: cover; object-position: 78% center; opacity: 0.85; }
+.diwali-stars { position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 12% 15%, var(--foreground) 90%, transparent), radial-gradient(1px 1px at 40% 8%, var(--foreground) 90%, transparent), radial-gradient(1.5px 1.5px at 68% 45%, var(--foreground) 90%, transparent), radial-gradient(1px 1px at 20% 72%, var(--foreground) 90%, transparent), radial-gradient(1px 1px at 90% 65%, var(--foreground) 90%, transparent); animation: star-shimmer 5s ease-in-out infinite alternate; }
+.diwali-fireworks { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+.diwali-launcher { position: fixed; bottom: max(12px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 40; display: flex; flex-direction: column; align-items: center; }
+.diwali-anaar { width: 88px; height: 110px; padding: 0; background: transparent; transition: transform 200ms; }
+.diwali-anaar:hover { background: transparent; transform: translateY(-4px); }
+.diwali-anaar img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 12px var(--diwali-glow)); }
+.diwali-anaar:disabled { opacity: 0.8; }
+.diwali-greeting { position: fixed; top: max(100px, 13svh); left: 50%; z-index: 40; width: min(460px, calc(100% - 32px)); min-height: 100px; text-align: center; opacity: 0; transform: translate(-50%, 8px); transition: opacity 500ms; pointer-events: none; text-shadow: 0 2px 12px var(--background), 0 0 24px var(--diwali-glow); }
+.diwali-greeting.is-visible { opacity: 1; transform: translate(-50%, 0); animation: diwali-greeting-pop 700ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.diwali-greeting span { display: block; font-family: Georgia, serif; font-weight: 700; font-style: italic; font-size: 52px; line-height: 1.25; color: var(--diwali-gold); text-shadow: 0 3px 0 var(--diwali-letter-shadow), 0 0 24px var(--diwali-glow), 0 3px 14px var(--background); }
+.diwali-greeting small { display: block; margin-top: 8px; color: var(--foreground); font-size: 13px; }
+.diwali-greeting-sparkle { position: absolute; width: 24px; height: 24px; color: var(--diwali-gold); animation: diwali-sparkle 1400ms ease-in-out infinite alternate; }
+.sparkle-left { left: 0; top: 4px; transform: rotate(-15deg); }
+.sparkle-right { right: 0; top: 48px; animation-delay: 400ms; }
+@keyframes diwali-greeting-pop { 0% { opacity: 0; transform: translate(-50%, 18px) scale(0.65) rotate(-4deg); } 65% { opacity: 1; transform: translate(-50%, -3px) scale(1.06) rotate(1deg); } 100% { opacity: 1; transform: translate(-50%, 0) scale(1) rotate(0); } }
+@keyframes diwali-sparkle { from { opacity: 0.45; scale: 0.8; } to { opacity: 1; scale: 1.12; } }
+@keyframes star-shimmer { from { opacity: 0.2; } to { opacity: 0.8; } }
+@media (max-width: 639px) { .diwali-anaar { width: 65px; height: 85px; } .diwali-sky-image { object-position: 86% center; } .diwali-greeting span { font-size: 36px; } .diwali-greeting-sparkle { width: 18px; height: 18px; } }
+@media (prefers-reduced-motion: reduce) { .diwali-stars, .diwali-greeting.is-visible, .diwali-greeting-sparkle { animation: none; } .diwali-anaar, .diwali-greeting { transition: none; } }
 
 @layer base {
   * {

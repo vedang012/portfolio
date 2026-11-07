@@ -11,3 +11,4 @@
 
 - Keep the portfolio as a single-page experience without blog routes or markdown publishing modules, because the blog has been removed.
 - Load the falling-leaves animation inside an effect and destroy it on unmount; this keeps browser-only canvas work outside SSR and prevents duplicate layers.
+- Keep theme preference client-side and load the fireworks engine after mount; decorative sky and fireworks layers must not intercept portfolio links, and effects must clean up on theme changes.

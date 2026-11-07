@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { DiwaliNight } from "@/components/portfolio/DiwaliNight";
 
 import { About } from "@/components/portfolio/About";
 import { Activity } from "@/components/portfolio/Activity";
@@ -38,10 +40,23 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [night, setNight] = useState(false);
+  useEffect(() => {
+    setNight(localStorage.getItem("portfolio-theme") === "dark");
+  }, []);
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", night);
+    return () => document.documentElement.classList.remove("dark");
+  }, [night]);
+  const toggleNight = () => {
+    setNight(!night);
+    localStorage.setItem("portfolio-theme", night ? "light" : "dark");
+  };
   return (
     <CursorProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navigation />
+      <div className={night ? "night-portfolio min-h-screen text-foreground" : "min-h-screen bg-background text-foreground"}>
+        {night && <DiwaliNight />}
+        <Navigation night={night} onToggleNight={toggleNight} />
         <main>
           <Hero />
           <About />
@@ -51,7 +66,7 @@ function Index() {
           <Contact />
         </main>
         <ChatWidget />
-        <LeafEffect />
+        {!night && <LeafEffect />}
         <CustomCursor />
         <footer className="border-t border-border px-6 py-8 md:px-12 lg:px-16">
           <div className="mx-auto flex max-w-3xl items-center justify-between">
