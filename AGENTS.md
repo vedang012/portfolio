@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep the portfolio as a single-page experience without blog routes or markdown publishing modules, because the blog has been removed.
+- Load the falling-leaves animation inside an effect and destroy it on unmount; this keeps browser-only canvas work outside SSR and prevents duplicate layers.

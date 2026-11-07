@@ -5,6 +5,7 @@ import { Activity } from "@/components/portfolio/Activity";
 import { Contact } from "@/components/portfolio/Contact";
 import { CustomCursor } from "@/components/portfolio/CustomCursor";
 import { Hero } from "@/components/portfolio/Hero";
+import { LeafEffect } from "@/components/portfolio/LeafEffect";
 import { Navigation } from "@/components/portfolio/Navigation";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
@@ -50,6 +51,7 @@ function Index() {
           <Contact />
         </main>
         <ChatWidget />
+        <LeafEffect />
         <CustomCursor />
         <footer className="border-t border-border px-6 py-8 md:px-12 lg:px-16">
           <div className="mx-auto flex max-w-3xl items-center justify-between">
