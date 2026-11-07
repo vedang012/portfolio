@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import type { Fireworks } from "fireworks-js";
-import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sky from "@/assets/diwali-night-sky-illustrated-preview.jpg";
 import anaar from "@/assets/diwali-anaar.png";
@@ -11,7 +10,6 @@ export function DiwaliNight() {
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const [ready, setReady] = useState(false);
   const [celebrating, setCelebrating] = useState(false);
-  const [greeting, setGreeting] = useState(false);
 
   useEffect(() => {
     let disposed = false;
@@ -61,12 +59,10 @@ export function DiwaliNight() {
       timers.current.push(setTimeout(() => engine.current?.launch(2), 900));
       timers.current.push(setTimeout(() => engine.current?.launch(2), 1800));
     }
-    timers.current.push(setTimeout(() => setGreeting(true), reduced ? 0 : 1200));
     timers.current.push(setTimeout(() => {
       engine.current?.stop();
       engine.current?.clear();
       setCelebrating(false);
-      setGreeting(false);
       timers.current = [];
     }, 8000));
   };
@@ -78,14 +74,6 @@ export function DiwaliNight() {
         <div className="diwali-stars" />
       </div>
       <div ref={container} className="diwali-fireworks" aria-hidden="true" />
-      <div role="status" aria-live="polite" className={greeting ? "diwali-greeting is-visible" : "diwali-greeting"}>
-          {greeting && <>
-            <Sparkles className="diwali-greeting-sparkle sparkle-left" aria-hidden="true" />
-            <span>Happy Diwali!</span>
-            <small>May your world shine brighter.</small>
-            <Sparkles className="diwali-greeting-sparkle sparkle-right" aria-hidden="true" />
-          </>}
-      </div>
       <div className="diwali-launcher">
         <Button variant="ghost" disabled={!ready || celebrating} onClick={launch}
           aria-label="Launch Diwali fireworks" title="Launch Diwali fireworks"

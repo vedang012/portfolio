@@ -1,6 +1,7 @@
 # Task Roadmap
 
 ## Diwali night mode
+- [x] Remove Happy Diwali greeting, verify fireworks, and push to GitHub
 - [x] Add a dark-mode toggle with moonlit sky and stars
 - [x] Add realistic interactive fireworks and Happy Diwali greeting
 - [x] Replace the skyshot picture with an anaar and move the greeting into the sky
